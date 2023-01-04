@@ -1,35 +1,23 @@
 package com.LockedMe;
 
-import java.util.Scanner;
-
 public class WelcomeScreen {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	
+	
+	
+	public static void printWelcomeScreen() {
+		//Will show application details on console
+		String appDetails = String.format(
+				"\nWelcome to LockedMe.com \n" 
+				+ "This application was developed by Dante Williams\n"
+				+ "*****************************************************\n");
+		System.out.println(appDetails);
 		
-		Scanner inputOpt = new Scanner(System.in);
-		
-		System.out.println("Main Screen \n\nComapany Lockers Application \nDeveloper Name: Dante Willims \n");
-		
-		/*
-		 * while(inputOpt.hasNext()) {
-		 * 
-		 * String input = inputOpt.nextLine(); try { return; } catch(Exception e) {
-		 * 
-		 * System.out.println("Incorrect input, try again"); } }
-		 */
-		while (SelectedOpt != 3) {
-		System.out.println("Please select one of the 3 options below by typing 1,2 or 3");
-		
-		
-		System.out.println("1 - Display current files");
-		System.out.println("2 - Additional Features");
-		System.out.println("3 - Exit Application");
-		
-		System.out.println("\nOption: ");
-		Integer SelectedOpt = inputOpt.nextInt();
-		}
+		//Will show application features on console
+		String appFunction = "Please see below a list of application features :-\n"
+				+ " - You will be able to access all files in the \"main\" folder\n"
+				+ " - Add, delete or search for specific files in \"main\" folder.\n"
+				+ "\n**Please be careful to ensure the correct filename is provided for searching or deleting files.**\n";
+		System.out.println(appFunction);
 	}
 
 }
