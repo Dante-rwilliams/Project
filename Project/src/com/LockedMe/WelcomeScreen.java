@@ -9,14 +9,14 @@ public class WelcomeScreen {
 		String appDetails = String.format(
 				"\nWelcome to LockedMe.com \n" 
 				+ "This application was developed by Dante Williams\n"
-				+ "*****************************************************\n");
+				+ "---------------------------------------------------\n");
 		System.out.println(appDetails);
 		
 		//Will show application features on console
 		String appFunction = "Please see below a list of application features :-\n"
 				+ " - You will be able to access all files in the \"main\" folder\n"
 				+ " - Add, delete or search for specific files in \"main\" folder.\n"
-				+ "\n**Please be careful to ensure the correct filename is provided for searching or deleting files.**\n";
+				+ "\n**Input correct filename for searching or deleting files.**\n";
 		System.out.println(appFunction);
 	}
 
