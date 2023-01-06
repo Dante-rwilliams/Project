@@ -20,8 +20,7 @@ public class MenuScreen {
 				"3 - Search for a file from \"main\" folder\n" + 
 				"4 - Show Main Menu\n" + 
 				"5 - Exit program\n";
-
-		System.out.print("\033[H\033[2J"); // Clears the screen for features menu  
+ 
 		System.out.flush(); 
 		System.out.println(f_Menu);
 	}

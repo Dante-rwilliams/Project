@@ -7,28 +7,32 @@ import java.util.Scanner;
 
 public class ControlMenuOption {
 	public static void controlMainMenu() {
-		boolean running = true;
+		boolean running = true; // Check if method is active
 		Scanner sc = new Scanner(System.in);
 		do {
 			try {
 				MenuScreen.mainMenu();;
 				int input = sc.nextInt();
 
+				//Main menu option selection control
 				switch (input) {
 				case 1:
 					SortFiles.SortAllFiles("Main");
 					break;
 				case 2:
 					ControlMenuOption.featuresMenuControl();
+					System.out.print("\033[H\033[2J"); 
+					System.out.flush(); 
+					// Clears the screen for features menu 
 					break;
 				case 3:
-					System.out.println("Program exited successfully.");
+					System.out.println("You have exited the Application.");
 					running = false;
 					sc.close();
 					System.exit(0);
 					break;
 				default:
-					System.out.println("Please select a valid option from above.");
+					System.out.println("\n****Invalid input, please enter numerical value 1-3.****\n");
 				}
 			} catch (Exception e) {
 				System.out.println(e.getClass().getName());
@@ -37,6 +41,8 @@ public class ControlMenuOption {
 		} while (running == true);
 	}
 	
+	
+	//Second Selection menu Control
 	public static void featuresMenuControl() {
 		boolean running = true;
 		Scanner sc = new Scanner(System.in);
@@ -47,16 +53,18 @@ public class ControlMenuOption {
 				
 				int input = sc.nextInt();
 				switch (input) {
+				
 				case 1:
-					// File Add
+					// Function to add file to folder
 					System.out.println("Enter the name of the file to be added to the \"main\" folder");
 					String fileToAdd = sc.next();
 					
 					AddUserFile.createFile(fileToAdd, sc);
 					
 					break;
+					
 				case 2:
-					// File/Folder delete
+					// Function to delete file from folder
 					System.out.println("Enter the name of the file to be deleted from \"main\" folder");
 					String fileToDelete = sc.next();
 					
@@ -73,7 +81,7 @@ public class ControlMenuOption {
 						DeleteFile.deleteFileFromFolder(filesToDelete.get(idx - 1));
 					} else {
 						
-						// If idx == 0, delete all files displayed for the name
+						// If delete all files displayed for the name
 						for (String path : filesToDelete) {
 							DeleteFile.deleteFileFromFolder(path);
 						}
@@ -81,8 +89,9 @@ public class ControlMenuOption {
 					
 
 					break;
+					
 				case 3:
-					// File/Folder Search
+					// Search "main" file or folder
 					System.out.println("Enter the name of the file to be searched from \"main\" folder");
 					String fileName = sc.next();
 					
@@ -91,17 +100,19 @@ public class ControlMenuOption {
 
 					
 					break;
+					
 				case 4:
-					// Go to Previous menu
+					// Go to main menu
 					return;
+					
 				case 5:
-					// Exit
-					System.out.println("Program exited successfully.");
+					// Exit program
+					System.out.println("You have exited the Application.");
 					running = false;
 					sc.close();
 					System.exit(0);
 				default:
-					System.out.println("Please select a valid option from above.");
+					System.out.println("\n****Invalid input, please enter numerical value 1-5.****\n");
 				}
 			} catch (Exception e) {
 				System.out.println(e.getClass().getName());

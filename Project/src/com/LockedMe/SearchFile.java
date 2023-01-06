@@ -39,9 +39,6 @@ public class SearchFile {
 				if (file.getName().startsWith(fileName)) {
 					fileListNames.add(file.getAbsolutePath());
 				}
-
-				// Need to search in directories separately to ensure all files of required
-				// fileName are searched
 				if (file.isDirectory()) {
 					filepathsearch(file.getAbsolutePath(), fileName, fileListNames);
 				}

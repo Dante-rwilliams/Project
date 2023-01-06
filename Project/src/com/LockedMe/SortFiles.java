@@ -23,10 +23,10 @@ public class SortFiles {
 		//Pass the name of the folder that was created 
 		SortFiles.createMainFolder("Main");
 
+		System.out.println("Files are sorted in ascending order \n");
+		
 		// listFilesInDirectory displays files along with folder structure
 		List<String> filesListNames = SortFiles.listFilesInDirectory(path, new ArrayList<String>());
-
-		System.out.println("Files are sorted in ascending order \n");
 		Collections.sort(filesListNames);
 
 		filesListNames.stream().forEach(System.out::println);
